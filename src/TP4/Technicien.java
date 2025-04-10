@@ -1,7 +1,6 @@
 package TP4;
 
 import java.util.ArrayList;
-
 import TP1.Specialite;
 
 public class Technicien {
