@@ -1,7 +1,10 @@
 import java.util.*;
+import java.text.ParseException;
+import java.text. SimpleDateFormat;
 
-import TP1.Specialite;
 import TP1.Technicien;
+import TP1.*;
+import TP1.ChefAtelier;
 import TP2.*;
 import TP2.Reparation;
 import TP3.*;
@@ -10,7 +13,47 @@ import TP4.*;
 import TP5.*;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
+    	SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+    	
+    	// TP1
+    	System.out.println("==== TP1: héritage ====");
+    	Technicien tech1, tech2, tech3;
+
+    	tech1 = new Technicien("MANSOUR", "Insaf Aya", "mansourinsafaya@gmail.com", "insaftware", "aljkerjfileri46578", 1 ,Specialite.Informatique);
+
+    	tech2 = new Technicien ("Laarbi", "Yousra", "ylaarbi@usthb.dz", "yousssy", ":dkcjmod",2, Specialite.Mecanique);
+
+    	tech3 = new Technicien();
+
+    	tech3.setNom("BOUMAAZA"); tech3.setPrenom("djihane"); 
+    	tech3.setEmail("boudjidji@hotmail.dz");
+    	tech3.setLogin("djidji");
+		tech3.setPassword("chebhasni1996"); 
+		tech3.setMatricule (3);
+    	tech3.setSpecialite (Specialite.Rien);
+    	
+    	System.out.println("Connexion de tech3: "+tech3.sauthentifier1());
+    	System.out.println("Connexion de techs: "+tech3.sauthentifier2());
+
+    	ChefAtelier chefl, chef2;
+
+    	chefl = new ChefAtelier ("Boulkrinat", "Samia", "sboulkrinat@usthb.dr", "bol", "sam", 1, format.parse("1/5/2020"), format.parse("1/5/2019"), Status.Actif);
+
+    	System.out.println("Nombre d'anneé d'expérience du chefl:" + chefl.miseAJourExperience(format.parse("1/5/2021")));
+    	
+    	chef2 = new ChefAtelier();
+    	chef2.setNom("Benhamoud"); 
+    	chef2.setPrenom("Yasser");
+    	chef2.setLogin("ben"); 
+    	chef2.setPassword("yas"); 
+    	chef2.setNbExperience (7);
+    	chef2.setDatePromotion(format.parse("10/5/2020"));
+    	chef2.setDateExperience (format.parse("10/4/2019"));
+    	
+    	System.out.println("Nombre d'anneé d'expérience du chef2");
+    	chef2.miseAJourExperience(format.parse("25/5/2020"));
+
     	
     	// TP2
     	System.out.println("==== TP2: Agrégation ====");
@@ -83,6 +126,7 @@ public class Main {
     	
     	
         // TP4
+        System.out.println("==== TP4: Association ====");
         Composant com1 = new Composant(0, "Processeur", null, 0, 120.0, null);
         Composant com2 = new Composant(0, "RAM", null, 0, 70.0, null);
 
@@ -121,6 +165,7 @@ public class Main {
 
 
         // TP5
+        System.out.println("==== TP5: héritage ====");
         t1.getPassword();
         System.out.println(t1);
 

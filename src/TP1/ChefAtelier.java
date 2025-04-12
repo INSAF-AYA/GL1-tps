@@ -62,9 +62,11 @@ public class ChefAtelier extends Personne {
     }
 
     public int miseAJourExperience(Date dateExp) {
-        this.dateExperience = dateExp;
-        int annees = new Date().getYear() - dateExp.getYear();
-        return annees;
+    	int difference= (int)(Math.abs((dateExp.getTime() - this.getDateExperience() .getTime())/(86400000)));
+    	if ((difference>=365)&& (this.status==Status.Actif)){
+    		this.nbExperience=(int)(difference/365);
+    	}
+    	return this.nbExperience;
     }
 }
 
