@@ -58,7 +58,7 @@ public class Reparation {
         return(total);
     }
     
-    void ajouterPièce(int ref ,String nom ,int quantité ,double prix) {
+    public void ajouterPièce(int ref ,String nom ,int quantité ,double prix) {
     	for (Piece p : listePieceRep) {
             if (p.getRef() == ref) {
                 p.setQuantite(p.getQuantite() + quantité);
@@ -122,10 +122,6 @@ public class Reparation {
             }
         }
         return false;
-    }
-    
-    public boolean estReformable(double prixAchat) {
-        return calculerMontantRéparation() > prixAchat;
     }
     
     public boolean estReformable(Piece piece) {

@@ -69,6 +69,29 @@ public class Composant {
 		this.etatComposant = etatComposant;
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+	    if (this == obj) return true;
+	    if (obj == null || getClass() != obj.getClass()) return false;
+	    Composant that = (Composant) obj;
+	    return this.réfComposant == that.réfComposant;
+	}
+
+	@Override
+	public int hashCode() {
+	    return Integer.hashCode(réfComposant);
+	}
+	
+	@Override
+	public String toString() {
+	    return "Composant{" +
+	           "réfComposant=" + réfComposant +
+	           ", nom='" + nomComposant + '\'' +
+	           ", prix=" + prixComposant +
+	           '}';
+	}
+
+
     
 }
 

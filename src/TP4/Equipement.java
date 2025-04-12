@@ -18,6 +18,10 @@ public class Equipement {
         this.typeEquip = typeEquip;
     }
 
+	public double getPrix() {
+		return this.prix;
+	}
+
     public Equipement(int numSerie, String designation, double prix, Type typeEquip, Vector<Composant> listeComposants) {
         this(numSerie, designation, prix, typeEquip);
         if (listeComposants != null) this.listeComposants = listeComposants;
@@ -44,10 +48,11 @@ public class Equipement {
     public void supprimerFournisseur(Fournisseur f) {
         listeFournisseurs.remove(f);
     }
+    
+    public boolean reformerCourant() {
+        return true; 
+    }
 
-	public double getPrix() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+
 }
 

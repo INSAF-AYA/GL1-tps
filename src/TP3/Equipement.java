@@ -2,6 +2,7 @@ package TP3;
 import java.util.Date;
 import java.util.Vector;
 import TP4.Fournisseur;
+import java.util.Objects;
 
 public class Equipement {
     private int numSerie;
@@ -26,8 +27,8 @@ public class Equipement {
         listeComposants.add(c);
     }
 
-    public void supprimerComposant(Composant c) {
-        listeComposants.remove(c);
+    public void supprimerComposant(Composant c11) {
+        listeComposants.remove(c11);
     }
 
     public void afficherListeComposants() {
@@ -88,4 +89,10 @@ public class Equipement {
                     '}';
         }
     }
+
+    public boolean reformerCourant() {
+        return true; 
+    }
+    
+    
 }
